@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+
+}
+
+/*Added a margin of 1% by taking away from the max width*/
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  max-width: 99%;
+  margin: 1%;
+}
+
+/*In genreal I tried to use classes as apposed to id to reduce specificity*/
+
+
+/*NAVIGATION SECTION*/
+
+/*changed the nav bar selector from an id to a class to decrease the specificty*/
+/*I tried to use relative units as much as I can, to ensure font, margins, paddings is not a fixed size and therefore improve responsiveness */
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  /*font-size: 2rem;*/
+  background-color: #202020;
+  padding: 0.75em;
+  color: white;
+
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  text-decoration: none;
+  overflow: auto;
+}
+
+/*decreasing the font size for the navigation pane when the width is less than or equal to 800px*/
+@media screen and (max-width:800px) {
+  .navigation {
+    font-size: 1rem;
+  }
+}
+
+
+/*changing the Navigation items to display vertically when the width is less than 500px*/
+@media screen and (max-width:500px) {
+  .navigation {
+    display: inline;
+    margin: auto;
+  }
+}
+
+a {
+  color: #ffffff;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+/*HERO BANNER SECTION*/
+
+.hero-banner {
+  display: flex;
+  background-image: url("../images/heroimage.jpg");
+  min-height: 20em;
+  color: white;
+  max-height: 98%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.hero-banner h2 {
+  /*font-size: 5rem;*/
+  text-align: center;
+  position: absolute;
+  right: 1px;
+  padding: 25px;
+  margin-bottom: auto;
+}
+
+.profile-pic {
+  display: flex;
+  height: 350px;
+  width: 350px;
+  margin: auto;
+  transition: 0.7s;
+}
+
+/*adding in the zoom in animation*/
+.profile-pic:hover {
+  transform: scale(1.2);
+}
+
+
+/*when the max width is less than or equal to 550 px I am decreasing the height and width of the profile pic*/
+@media screen and (max-width:550px) {
+  .profile-pic {
+    display: flex;
+    height: 275px;
+    width: 275px;
+    margin-bottom: 2em;
+    margin-top: auto;
+  }
+}
+
+
+
+
+/* MAIN GRID*/
+
+/*work content*/
+
+/*setting up a grid to include all the section down from the about me section*/
+.main-grid {
+  display: grid;
+  grid-gap: 20px;
+  /*change this later*/
+  min-height: 2000px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 0.5fr 0.5fr 0.5fr;
+  grid-template-areas:
+    "page-section-AM about-me about-me"
+    "page-section surf-report surf-report "
+    "page-section led-wall calculator"
+    "page-section pastel-puzzle Run-buddy"
+    "contact page-section-contact page-section-contact";
+}
+
+/*Changing the grid to a single column grid when the max width of the screen is less than or equal to 500px*/
+@media screen and (max-width:500px) {
+  .main-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+      "page-section-AM"
+      "about-me"
+      "page-section"
+      "surf-report"
+      "led-wall"
+      "calculator"
+      "pastel-puzzle"
+      "Run-buddy"
+      "contact"
+      "page-section-contact";
+
+  }
+}
+
+
+
+.page-section-AM {
+  grid-area: page-section-AM;
+  /*font-size: 2.5rem;*/
+  border-right: 4px solid;
+  border-right-color: black;
+  margin-left: auto;
+  padding-right: 1em;
+}
+
+
+
+@media screen and (max-width:500px) {
+  .page-section-AM {
+    border: none;
+    margin: auto;
+  }
+}
+
+
+.about-me {
+  grid-area: about-me;
+  display: flex;
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  /* font-size: 2em;*/
+  margin-bottom: auto;
+  flex-wrap: wrap;
+}
+
+
+.page-section {
+  grid-area: page-section;
+  border-right: 4px solid;
+  border-right-color: black;
+  /*margin-right: 5%;*/
+  margin-left: auto;
+  padding-right: 1em;
+}
+
+
+@media screen and (max-width:500px) {
+  .page-section {
+    border: none;
+    margin: auto;
+  }
+}
+
+.surf-report {
+  grid-area: surf-report;
+  background-image: url("../images/Surf\ Report.jpg");
+}
+
+
+.led-wall {
+  grid-area: led-wall;
+  background-image: url("../images/led\ wall.jpg");
+}
+
+
+.calculator {
+  grid-area: calculator;
+  background-image: url("../images/calculator.jpg");
+}
+
+.pastel-puzzle {
+  grid-area: pastel-puzzle;
+  background-image: url("../images/puzzle.jpg");
+}
+
+
+.Run-buddy {
+  grid-area: Run-buddy;
+  background-image: url("../images/run\ buudy.jpg");
+}
+
+#work {
+  background-position: center;
+  /*padding: 1.5em;*/
+  background-size: cover;
+  display: grid;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  align-items: end;
+  border: 5px solid #202020;
+  transition: 0.7s;
+
+}
+
+#work:hover {
+  transform: scale(1.1);
+}
+
+.heading {
+  margin: 0;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+}
+
+#heading {
+  /*font-size: 2.5rem;*/
+  align-items: center;
+}
+
+.contact {
+  grid-area: contact;
+  /*font-size: 2.5rem;*/
+  border-right: 4px solid;
+  border-right-color: black;
+  margin-left: auto;
+  padding-right: 1em;
+}
+
+
+@media screen and (max-width:500px) {
+  .contact {
+    border: none;
+    margin: auto;
+  }
+}
+
+.page-section-contact {
+  grid-area: page-section-contact;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  justify-content: space-evenly;
+  grid-column: span 2;
+  cursor: pointer;
+  max-width: 100%;
+  overflow: auto;
+}
+
+@media screen and (max-width:600px) {
+  .page-section-contact {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .page-section-contact {
+    display: inline;
+    margin: auto
+  }
+}
+
+.page-section-contact p {
+  /*padding-left: 2em;
+  padding-right: 2em;*/
+  cursor: pointer;
+  /*font-size: 2em;*/
+  color: purple;
+}
