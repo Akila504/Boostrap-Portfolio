@@ -18,6 +18,40 @@
   text-align: center;
 }
 
+
+
+/*about me section*/
+
+.cIcon img {
+  max-width: 3rem;
+  max-height: 3rem;
+  margin: auto;
+}
+
+.cIcon {
+  text-align: center;
+}
+
+/*footer section*/
+
+.footer-icon {
+  display: flex;
+  justify-content: center;
+}
+
+
+.footer-icon img {
+  max-width: 3rem;
+  max-height: 3rem;
+
+}
+
+.footer p {
+  text-align: center;
+}
+
+
+
 /*card section*/
 .card-img-top {
   width: 100%;
@@ -25,7 +59,7 @@
   object-fit: cover;
 }
 
-
+/*Skills section*/
 section.testimonials {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -39,4 +73,8 @@ section.testimonials .testimonial-item img {
   max-width: 12rem;
   max-height: 12rem;
   box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.skills {
+  text-align: center;
 }
