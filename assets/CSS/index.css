@@ -59,6 +59,13 @@
   object-fit: cover;
 }
 
+.card-body {
+  min-height: 32px;
+}
+
+
+
+
 /*Skills section*/
 section.testimonials {
   padding-top: 7rem;
